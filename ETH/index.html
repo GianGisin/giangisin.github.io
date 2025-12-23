@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Days Until Doom 🌹</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+        }
+
+        .container {
+            height: 50%;
+        }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 0px 2px;
+            border: 3px solid black;
+        }
+
+        .typewriter{
+            animation: animate 1.5s linear forwards;
+        }
+
+        @keyframes animate{
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <h1 id="date" class="typewriter"></h1>
+        </div>
+    </div>
+    <script>
+        field = document.getElementById("date");
+        const deadline = new Date(2026, 0, 21);
+        const diff = Math.ceil((deadline - Date.now())/(24*60*60*1000))
+        field.innerHTML = diff + " days remaining.";
+    </script>
+</body>
+</html>
